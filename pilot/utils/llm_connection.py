@@ -440,6 +440,11 @@ def stream_gpt_completion(data, req_type, project, model=None):
         }
         data['max_tokens'] = MAX_GPT_MODEL_TOKENS
         data['model'] = model
+    elif endpoint == 'CUSTOM':
+        endpoint_url = os.getenv('CUSTOM_ENDPOINT_URL')
+        headers = {
+            'Content-Type': 'application/json'
+        }
     else:
         # If not, send the request to the OpenAI endpoint
         endpoint_url = os.getenv('OPENAI_ENDPOINT', 'https://api.openai.com/v1/chat/completions')

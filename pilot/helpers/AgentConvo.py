@@ -88,6 +88,7 @@ class AgentConvo:
 
         try:
             response = parse_agent_response(response, function_calls)
+            logger.info(response)
         except (KeyError, json.JSONDecodeError) as err:
             logger.error("Error while parsing LLM response: {err.__class__.__name__}: {err}")
             print(color_red_bold(f'There was an error parsing LLM response: \"{err.__class__.__name__}: {err}\". Please try again later.'))
