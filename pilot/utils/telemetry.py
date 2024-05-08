@@ -47,7 +47,7 @@ class Telemetry:
     Note: all methods are no-ops if telemetry is not enabled.
     """
 
-    DEFAULT_ENDPOINT = "https://api.pythagora.io/telemetry"
+    DEFAULT_ENDPOINT = "http://localhost:3200/telemetry"
     MAX_CRASH_FRAMES = 3
 
     def __init__(self):
